@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function get_division() {
+            const url = 'http://192.168.199.2/webapi2/api/mas/getdivision';
+            //const url = 'http://192.168.199.2:801/webapi/api/mas/getdivision';
+            //const url = 'http://localhost:63672//api/mas/getdivision';
+            //const requestOptions = {
+            //    method: 'GET',
+            //    headers: {
+            //        'credentials': 'include',
+            //        'Content-Type': 'application/json',
+            //        'Accept': 'application/json',
+            //        'Access-Control-Allow-Origin': '*'
+            //    }
+            //};
+
+                fetch(url)
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    alert(data);
+                    let divisions = data;
+
+                   //$('#id-show').text(divisions[0].Division_name + ", " + divisions[1].Division_name + ", " + divisions[2].Division_name);
+                    // alert(divisions[0].Division_name + ", " + divisions[1].Division_name + ", " + divisions[2].Division_name);
+                    //divisions.map(function (division) {
+                    //    alert(division[0].Division_name);
+                    //});
+                }).
+                catch(function (error) {
+                    alert(error);
+                });
+
+
+        }
+
+        get_division();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
